@@ -16,18 +16,21 @@ def but_better(video_id: str, **youtube_kwargs):
         **youtube_kwargs: Additional keyword arguments to pass to `IPython.display.YouTubeVideo`.
 
     Returns:
-        function: The decorated function.
+        function: The decorated function that plays the YouTube video
+            while the original function runs.
 
     Examples:
+        Use as a decorator to play a YouTube video while a function runs.
 
         @but_better("z3SEc70eQYE")
         def phillies_hype_song():
             print("Let's go Phillies!")
 
+        Return a new function from an existing function.
 
-        @but_better("mwgcK4E_RU0")
-        def favorite_customer():
-            print("You're my favorite customer!")
+        from my_module import my_function
+
+        my_function_but_better = but_better("z3SEc70eQYE")(my_function)
 
     """
     if not in_jupyter_notebook():
