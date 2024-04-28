@@ -27,6 +27,7 @@ ipython = "*"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
+rich = "^13.7.1"
 
 [tool.ruff]
 line-length = 88
