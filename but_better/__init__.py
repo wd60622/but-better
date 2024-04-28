@@ -1,7 +1,7 @@
 from IPython import get_ipython
 from IPython.display import display, YouTubeVideo
 from functools import wraps
-import urlparse
+from urllib import parse
 import warnings
 
 
@@ -23,8 +23,8 @@ def parse_youtube_url(url: str) -> str:
         # "z3SEc70eQYE"
 
     """
-    url_data = urlparse.urlparse(url)
-    query = urlparse.parse_qs(url_data.query)
+    url_data = parse.urlparse(url)
+    query = parse.parse_qs(url_data.query)
     return query["v"][0]
 
 
@@ -36,7 +36,7 @@ def but_better(video_id: str, **youtube_kwargs):
     """Wrap any function with this decorator to play a YouTube video while it runs.
 
     Args:
-        video (str): The YouTube video ID.
+        video_id (str): The YouTube video ID.
         **youtube_kwargs: Additional keyword arguments to pass to `IPython.display.YouTubeVideo`.
 
     Returns:
