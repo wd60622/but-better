@@ -1,7 +1,31 @@
 from IPython import get_ipython
 from IPython.display import display, YouTubeVideo
 from functools import wraps
+import urlparse
 import warnings
+
+
+def parse_youtube_url(url: str) -> str:
+    """Get the YouTube video ID from a URL.
+
+    Reference: https://stackoverflow.com/questions/4356538/how-can-i-extract-video-id-from-youtubes-link-in-python
+
+    Args:
+        url (str): The YouTube URL.
+
+    Returns:
+        str: The YouTube video ID.
+
+    Examples:
+        Get the video ID from a URL.
+
+        parse_youtube_url("https://www.youtube.com/watch?v=z3SEc70eQYE")
+        # "z3SEc70eQYE"
+
+    """
+    url_data = urlparse.urlparse(url)
+    query = urlparse.parse_qs(url_data.query)
+    return query["v"][0]
 
 
 def in_jupyter_notebook() -> bool:
