@@ -27,3 +27,5 @@ Use the wrapped function as you would normally.
 ```python
 your_function_but_better()
 ```
+
+

@@ -2,8 +2,24 @@
 name = "but-better"
 version = "0.1.0"
 description = "Your code but better"
-authors = ["Will Dean <wd60622@gmail.com>"]
+authors = [
+    "Will Dean <wd60622@gmail.com>", 
+]
+repository = "https://github.com/wd60622/but-better/"
 readme = "README.md"
+packages = [
+    { include = "but_better" }, 
+    { include = "but_better/py.typed" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+    "Topic :: Utilities",
+    "Topic :: Scientific/Engineering",
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9"
@@ -11,6 +27,14 @@ ipython = "*"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
+
+[tool.ruff]
+line-length = 88
+exclude = []
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"**/tests/*" = ["S101"]
 
 [build-system]
 requires = ["poetry-core"]
