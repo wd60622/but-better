@@ -11,15 +11,15 @@ def in_jupyter_notebook() -> bool:
 def but_better(video_id: str, **youtube_kwargs):
     """Wrap any function with this decorator to play a YouTube video while it runs.
 
-    Args: 
+    Args:
         video (str): The YouTube video ID.
         **youtube_kwargs: Additional keyword arguments to pass to `IPython.display.YouTubeVideo`.
 
     Returns:
         function: The decorated function.
 
-    Examples: 
-        
+    Examples:
+
         @but_better("z3SEc70eQYE")
         def phillies_hype_song():
             print("Let's go Phillies!")
@@ -34,7 +34,7 @@ def but_better(video_id: str, **youtube_kwargs):
         warnings.warn("This decorator only works in Jupyter notebooks.", UserWarning)
         return lambda func: func
 
-    if "allow_autoplay" not in youtube_kwargs: 
+    if "allow_autoplay" not in youtube_kwargs:
         youtube_kwargs["allow_autoplay"] = True
 
     def decorator(func):
@@ -42,9 +42,13 @@ def but_better(video_id: str, **youtube_kwargs):
         def wrapper(*args, **kwargs):
             display(YouTubeVideo(video_id, **youtube_kwargs))
             return func(*args, **kwargs)
+
         return wrapper
+
     return decorator
 
 
 phillies_hype_song = but_better("z3SEc70eQYE")
 favorite_customer = but_better("mwgcK4E_RU0")
+fireplace = but_better("L_LUpnjgPso")
+gasolina = but_better("3tw2P65wv5E")
