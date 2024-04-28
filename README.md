@@ -16,21 +16,19 @@ Pass YouTube video id as the argument to `but_better` and use it as a decorator.
 ```python
 from but_better import but_better
 
-
 my_favorite_youtube_id: str = ...
 youtube_video = but_better(my_favorite_youtube_id)
 
+from their_module import their_function 
 
-from my_module import my_function 
-
-my_function_but_better = youtube_video(my_function)
+their_function_but_better = youtube_video(their_function)
 ```
 
-If you are writing the function, you can use the decorator syntax.
+If you are writing the function, use the decorator syntax:
 
 ```python
 @youtube_video
-def your_function():
+def my_function():
     # Your code here
     pass
 ```
