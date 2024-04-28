@@ -53,5 +53,5 @@ def but_better(video_id: str, **youtube_kwargs):
 
 phillies_hype_song = but_better("z3SEc70eQYE")
 favorite_customer = but_better("mwgcK4E_RU0")
-fireplace = but_better("L_LUpnjgPso")
+ten_hour_fireplace = but_better("L_LUpnjgPso")
 gasolina = but_better("3tw2P65wv5E")
