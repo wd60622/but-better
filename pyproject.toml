@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "but-better"
+version = "0.1.0"
+description = "Your code but better"
+authors = ["Will Dean <wd60622@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+ipython = "*"
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
