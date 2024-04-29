@@ -3,6 +3,7 @@ name = "but-better"
 version = "0.1.0"
 description = "Your code but better"
 authors = [
+    "Ulf Aslak Lai <ulfaslak@gmail.com>",
     "Will Dean <wd60622@gmail.com>", 
 ]
 repository = "https://github.com/wd60622/but-better/"
