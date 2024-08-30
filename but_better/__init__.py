@@ -1,5 +1,6 @@
 from IPython import get_ipython
 from IPython.display import display, YouTubeVideo
+from IPython.core.display import Javascript
 from functools import wraps
 from urllib import parse
 import warnings
@@ -32,11 +33,12 @@ def in_jupyter_notebook() -> bool:
     return get_ipython().__class__.__name__ == "ZMQInteractiveShell"
 
 
-def but_better(video_id: str, **youtube_kwargs):
+def but_better(video_id: str, stop_on_completion: bool = True, **youtube_kwargs):
     """Wrap any function with this decorator to play a YouTube video while it runs.
 
     Args:
         video_id (str): The YouTube video ID.
+        stop_on_completion (bool): Whether to stop the video when the function completes.
         **youtube_kwargs: Additional keyword arguments to pass to `IPython.display.YouTubeVideo`.
 
     Returns:
@@ -72,7 +74,20 @@ def but_better(video_id: str, **youtube_kwargs):
         @wraps(func)
         def wrapper(*args, **kwargs):
             display(YouTubeVideo(video_id, **youtube_kwargs))
-            return func(*args, **kwargs)
+            result = func(*args, **kwargs)
+            if not stop_on_completion:
+                return result
+
+            stop_video_js = f"""
+            var iframe = document.querySelector('iframe[src*="{video_id}"]');
+            if (iframe) {{
+                var url = new URL(iframe.src);
+                url.searchParams.set('autoplay', '0');
+                iframe.src = url.toString();
+            }}
+            """
+            display(Javascript(stop_video_js))
+            return result
 
         return wrapper
 
