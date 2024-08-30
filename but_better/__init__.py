@@ -46,15 +46,19 @@ def but_better(video_id: str, **youtube_kwargs):
     Examples:
         Use as a decorator to play a YouTube video while a function runs.
 
+        ```python
         @but_better("z3SEc70eQYE")
         def phillies_hype_song():
             print("Let's go Phillies!")
+        ```
 
         Return a new function from an existing function.
 
+        ```python
         from my_module import my_function
 
         my_function_but_better = but_better("z3SEc70eQYE")(my_function)
+        ```
 
     """
     if not in_jupyter_notebook():
@@ -75,7 +79,9 @@ def but_better(video_id: str, **youtube_kwargs):
     return decorator
 
 
-phillies_hype_song = but_better("z3SEc70eQYE")
+elevator = but_better("xNjyG8S4_kI")
 favorite_customer = but_better("mwgcK4E_RU0")
-ten_hour_fireplace = but_better("L_LUpnjgPso")
 gasolina = but_better("3tw2P65wv5E")
+gotcha = but_better("dQw4w9WgXcQ")
+phillies_hype_song = but_better("z3SEc70eQYE")
+ten_hour_fireplace = but_better("L_LUpnjgPso")
