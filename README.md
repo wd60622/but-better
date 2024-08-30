@@ -10,7 +10,7 @@ pip install but-better
 
 ## Usage
 
-Pass the time during a long running function to watch a youtube video. 
+Pass the time during a long running function by watching a YouTube video. 
 Pass YouTube video id as the argument to `but_better` and use it as a decorator.
 
 ```python
@@ -33,13 +33,15 @@ def my_function():
     pass
 ```
 
-Or try out some of the pre-defined videos.
+Struggling to find something to kill the time? Try out a pre-defined video:
 
 ```python
 from but_better import (
-    ten_hour_fireplace, 
-    phillies_hype_song, 
+    elevator,
     favorite_customer, 
     gasolina, 
+    gotcha,
+    phillies_hype_song, 
+    ten_hour_fireplace, 
 )
 ```
