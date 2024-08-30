@@ -1,5 +1,8 @@
 # Your Code But Better
 
+[![PyPI version](https://badge.fury.io/py/but-better.svg)](https://badge.fury.io/py/but-better)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 Wrapper for your code to make it nothing but better. 
 
 ## Installation
