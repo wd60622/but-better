@@ -3,6 +3,7 @@ name = "but-better"
 version = "0.1.0"
 description = "Your code but better"
 authors = [
+    "Carlos Trujillo <carlos.trujillo@pymc-labs.com>",
     "Niall Oulton <niall.oulton@1749.io>",
     "Ulf Aslak Lai <ulfaslak@gmail.com>",
     "Will Dean <wd60622@gmail.com>", 
